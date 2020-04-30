@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "305579396505",
+    "firebase_url": "https://foodee-70804.firebaseio.com",
+    "project_id": "foodee-70804",
+    "storage_bucket": "foodee-70804.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:305579396505:android:3892e4910edbf7592e1708",
+        "android_client_info": {
+          "package_name": "com.example.foodee"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "305579396505-lo0rb37n5uof7953rb8n7bv6sdasskb7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB78cmOIHCteSvXsfIo4bR25YrIxMYnkDc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "305579396505-lo0rb37n5uof7953rb8n7bv6sdasskb7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

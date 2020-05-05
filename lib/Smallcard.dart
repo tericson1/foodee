@@ -81,7 +81,6 @@ class Smallcard extends StatelessWidget {
                   ),
                 ),
 
-                //child 2 = title
                 Expanded(
                   flex: 1,
                   child: Align(
@@ -142,7 +141,7 @@ class Smallcard extends StatelessWidget {
                                 opacity: 0.4,
                                 child: Text(
                                   location,
-                                  textAlign: TextAlign.left,
+                                  textAlign: TextAlign.center,
                                   style: TextStyle(
                                     color: AppColors.primaryText,
                                     fontFamily: "Lato",

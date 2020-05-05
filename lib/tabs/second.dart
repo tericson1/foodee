@@ -110,5 +110,7 @@ void createRecord() async {
         'Content': 'test content',
         'Rating': 'test Rating',
         'ImageURL': 'https://www.jocooks.com/wp-content/uploads/2016/02/chicken-and-seafood-paella-1-2-500x375.jpg'
+      //need to figure out how to add image 
+      //how to add dish reference 
       });
 }

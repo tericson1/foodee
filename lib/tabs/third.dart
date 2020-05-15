@@ -1,140 +1,99 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'cards.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:foodee/CustomCard.dart';
+import 'package:foodee/Smallcard.dart';
+//import 'package:foodee/views/searchresults.dart';
+//import 'cards.dart';
+//import 'package:cloud_firestore/cloud_firestore.dart';
 
 class ThirdTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[50],
-      resizeToAvoidBottomPadding: false,
-       body: 
-       
-        Column(children: <Widget>[
-          Expanded(
-              child:  
-
-
-       SingleChildScrollView( child: 
-                  Column(children: <Widget>[
-
-                    Container
-                    // padding: const EdgeInsets.only(top: 8, left: 8, right: 8),
-                    (child:
-        Column(
-         
-          children: [
-            for (final destination in destinations(context))
-              Container(
-                margin: const EdgeInsets.only(bottom: 8),
-                child: (destination.type == CardDemoType.standard)
-                    ? TravelDestinationItem(destination: destination)
-                    : destination.type == CardDemoType.tappable
-                        ? TappableTravelDestinationItem(
-                            destination: destination)
-                        : SelectableTravelDestinationItem(
-                            destination: destination),
-              ),
-          ]
-        ),
+      body: Column(children: <Widget>[
+        Expanded(
+          child: SingleChildScrollView(
+            child: Column(
+              children: <Widget>[
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Center(
+                    child: Text("Activity: Recent Reviews",
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            color: Colors.lightBlue[900],
+                            fontSize: 20)),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Container(
+                      child: CustomCard(
+                    imageurl:
+                        'https://www.jerseygirlcooks.com/wp-content/uploads/2017/09/DSC_0793-1024x683.jpg',
+                    rating: 95,
+                    dish: "Pan Seared Swordfish",
+                    review:
+                        "Cooked to Perfection. Flavor was immaculate.Made me feel like I was a King. Portions were good, not too much not too little",
+                  )),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Container(
+                      child: CustomCard(
+                    imageurl:
+                        'https://assets.epicurious.com/photos/5764583142e4a5ed66d1df6c/6:4/w_620%2Ch_413/seafood-paella.jpg',
+                    rating: 91,
+                    dish: "Seafood Paella",
+                    review:
+                        "Was a little lukewarm when it arrive, but very delicious! Portions were good and flavor was amazing. Salty but robust spice, very enjoyable!",
+                  )),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Center(
+                    child: Center(
+                      child: Text(
+                          "Recent Dishes Reviewed at Neighborhood Restaurants",
+                          style: TextStyle(
+                              color: Colors.lightBlue[900], fontSize: 18)),
                     ),
+                  ),
+                ),
                 Container(
-              child: Text("All Dishes"),
+                  child: Smallcard(
+                    foodimageurl: 'images/padthai.jpg',
+                    rating: "84",
+                    dish: "Pad Thai",
+                    restaurant: "Thai House",
+                    location: "Hampton, Nh",
+                  ),
+                ),
+                Container(
+                  child: Smallcard(
+                    foodimageurl: 'images/tacos.jpg',
+                    rating: "96",
+                    dish: "Chicken Taco's",
+                    restaurant: "Burrito Loco",
+                    location: "Hampton, NH",
+                  ),
+                ),
+
+                // TextFormField(
+                //   validator: (value) {
+                //     if (value.isEmpty) {
+                //       return 'Search for Dish, Location or Restaurant';
+                //     }
+                //     return null;
+                //   },
+                // ),
+
+                // Text('Submit'),
+              ],
             ),
-            Container(
-              child: StreamBuilder<QuerySnapshot>(
-                stream: Firestore.instance.collection('Dishes').snapshots(),
-                builder: (BuildContext context,
-                    AsyncSnapshot<QuerySnapshot> snapshot) {
-                  if (snapshot.hasError)
-                    return new Text('Error: ${snapshot.error}');
-                  switch (snapshot.connectionState) {
-                    case ConnectionState.waiting:
-                      return new Text('Loading...');
-                    default:
-                      return new Column(
-                        children: snapshot.data.documents
-                            .map((DocumentSnapshot document) {
-                          return new ListTile(
-                            title: new Text(document['Name']),
-                            subtitle: new Text(document['Category']),
-                          );
-                        }).toList(),
-                      );
-                  }
-                },
-              ),
-            ),
-            Container(
-              child: Text("All Restaurants"),
-            ),
-            Container(
-              child: StreamBuilder<QuerySnapshot>(
-                stream:
-                    Firestore.instance.collection('Restaurants').snapshots(),
-                builder: (BuildContext context,
-                    AsyncSnapshot<QuerySnapshot> snapshot) {
-                  if (snapshot.hasError)
-                    return new Text('Error: ${snapshot.error}');
-                  switch (snapshot.connectionState) {
-                    case ConnectionState.waiting:
-                      return new Text('Loading...');
-                    default:
-                      return new Column(
-                        children: snapshot.data.documents
-                            .map((DocumentSnapshot document) {
-                          return new ListTile(
-                            title: new Text(document['Name']),
-                            subtitle: new Text(document['Neighborhood']),         
-                            //new Text(document['Restaurant'].toString());
-                          );
-                        }).toList(),
-                      );
-                  }
-                },
-              ),
-            ),
-            
-          ],
+          ),
         ),
-                  
-      ),
-        
-       ),
-       
-        ],
-        ),
+      ]),
     );
-
-      }
+  }
 }
-
-  //     Container(
-  //       child: Center(
-  //         child: Column(
-  //           mainAxisAlignment: MainAxisAlignment.center,      
-  //           children: <Widget>[
-  //          Text(
-  //             "Rules",
-  //               style: TextStyle(color: Colors.lightGreenAccent[700], fontWeight: FontWeight.bold,
-  //     fontSize: 30), 
-  //             ),
-  //             Text(
-  //               "Foodie is a community of people who:	Love food	Want to share meals from restaurants that have inspired them	Want to find their next mealReview Standards: 	Foodie is about the food, and the food only. If you had a bad experience with the wait staff somewhere, bring  your complaints to yelp. 	Bring your best to Foodie. Foodie is a collection of diabolical meals, not a collection of mediocre and poor meals. The only exception is if something you had did not meet expectations in a very specific way that you want to warn your fellow foodies about. We want Foodie as a collection of all the amazing and inspiring meals out there so other Foodies can uncover them. 	Reviews must be genuine. They are reviewedfor quality purposes. Promotional reviews will beremoved, as will overly negative, personal,or derogatory reviews. ",
-  //               style: TextStyle(color: Colors.black), 
-  //             ),
-  // IconButton(
-  //           icon: Icon(Icons.flash_on),
-  //           tooltip: 'Search',
-  //           onPressed: null,
-  //         ),
-  //             Text(
-  //               "Rating Scale:	1 Flame: Great meal, would recommend 	2 Flames: Best meal of its category that you've 			          had	3 Flames: Diabolical, life changing	X - Did not meet expectations.",
-  //               style: TextStyle(color: Colors.black),            
-  //             ),         
-  //           ],
-  //         ),
-  //       ),
-  //     ),
-  

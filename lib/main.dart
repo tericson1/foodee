@@ -1,12 +1,11 @@
-
-
 import 'package:flutter/material.dart';
 //import 'package:foodee/views/restaurant.dart';
 import 'tabs/first.dart';
 import 'tabs/second.dart';
 import 'tabs/third.dart';
 import 'tabs/fourth.dart';
-import 'CustomSearchDelegate.dart';
+import 'package:foodee/views/searchresults.dart';
+//import 'CustomSearchDelegate.dart';
 
 //import 'tabs/cards.dart';
 //import 'package:firebase_database/firebase_database.dart';
@@ -25,9 +24,7 @@ void main() {
       // onGenerateRoute: router.generateRoute,
       // initialRoute: routes.LoginRoute,
       // Home
-      home: MyHome()
-      )
-      );
+      home: MyHome()));
 }
 
 class MyHome extends StatefulWidget {
@@ -61,26 +58,40 @@ class MyHomeState extends State<MyHome> with SingleTickerProviderStateMixin {
       // Appbar
       appBar: AppBar(
         // Title
-        title: Text("Foodee"),
+        title: Text("Foodee",
+            style: TextStyle(
+              color: Colors.black,
+            )),
         // Set the background color of the App Bar
- actions: <Widget>[
-    IconButton(
-      icon: Icon(Icons.search),
-      onPressed: () {
-        showSearch(
-          context: context,
-          delegate: CustomSearchDelegate(),
-        );
-      },
-    ),
-  ],
-        
-        backgroundColor: Colors.indigoAccent[700],
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(
+              Icons.search,
+              color: Colors.black,
+            ),
+            onPressed: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => Searchresults(
+                            restaurant: 'cool restaurant',
+                            dish: 'cool dish',
+                          )));
+            },
+          ),
+          Icon(
+            Icons.format_list_bulleted,
+            color: Colors.black,
+          ),
+        ],
+
+        backgroundColor: Colors.grey[100],
       ),
       // Set the TabBar view as the body of the Scaffold
       body: TabBarView(
+        physics: NeverScrollableScrollPhysics(),
         // Add tabs as widgets
-        children: <Widget>[FirstTab(), SecondTab(), ThirdTab(),FourthTab()],
+        children: <Widget>[FirstTab(), SecondTab(), ThirdTab(), FourthTab()],
         // set the controller
         controller: controller,
       ),
@@ -112,5 +123,3 @@ class MyHomeState extends State<MyHome> with SingleTickerProviderStateMixin {
     );
   }
 }
-
-

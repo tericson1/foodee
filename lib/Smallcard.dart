@@ -1,23 +1,26 @@
-
 import 'package:flutter/material.dart';
 import 'package:foodee/values/values.dart';
-
-
+import 'package:foodee/views/dishhome.dart';
+import 'package:foodee/views/restaurant.dart';
 
 class Smallcard extends StatelessWidget {
-  const Smallcard({@required this.foodimageurl,@required this.rating,@required this.dishname,@required this.restaurant,@required this.location,
+  const Smallcard({
+    @required this.foodimageurl,
+    @required this.rating,
+    @required this.dish,
+    @required this.restaurant,
+    @required this.location,
   })  : assert(foodimageurl != null),
         assert(rating != null),
-        assert(dishname != null),
+        assert(dish != null),
         assert(restaurant != null),
         assert(location != null);
 
   final String foodimageurl;
   final String rating;
-  final String dishname;
+  final String dish;
   final String restaurant;
   final String location;
-
 
 // List<Smallcard> dishes (BuildContext context) => [
 //       Smallcard(
@@ -29,11 +32,11 @@ class Smallcard extends StatelessWidget {
 //       ),
 // ];
 
-//change class name 
+//change class name
 //class AdvertisementItemWidget extends StatelessWidget {
   //  const AdvertisementItemWidget({Key key, @required this.dish})
-     //: assert(dish != null),
-       // super(key: key);
+  //: assert(dish != null),
+  // super(key: key);
 
   // This height will allow for all the Card's content to fit comfortably within the card.
 
@@ -61,7 +64,7 @@ class Smallcard extends StatelessWidget {
           Positioned(
             left: 0,
             top: 10,
-            right: 42,
+            right: 0,
             child: Row(
               //crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
@@ -72,85 +75,79 @@ class Smallcard extends StatelessWidget {
 
                   child: Container(
                     width: 175,
-                    height: 115,
-                    child:
-                        Image.asset(foodimageurl,
-
+                    height: 130,
+                    child: Image.asset(
+                      foodimageurl,
                       fit: BoxFit.fill,
                     ),
                   ),
                 ),
-
                 Expanded(
                   flex: 1,
                   child: Align(
                     alignment: Alignment.topCenter,
                     child: Container(
-                      height: 115,
-                      margin: EdgeInsets.only(left: 15, top: 5),
+                      height: 130,
+                      width: 175,
+                      margin: EdgeInsets.only(left: 0, top: 0),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: [
                           Align(
                             alignment: Alignment.topCenter,
-                            child: Text(
-                              dishname,
-                              textAlign: TextAlign.left,
-                              style: TextStyle(
-                                color: AppColors.secondaryText,
-                                fontFamily: "Lato",
-                                fontWeight: FontWeight.w500,
-                                fontSize: 20,
-                                height: 1.42857,
-                              ),
+                            child: Container(
+                              //height: 30,
+                              child: FlatButton(
+                                  child: Text(
+                                    dish,
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                      color: AppColors.secondaryText,
+                                      fontFamily: "Lato",
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 20,
+                                    ),
+                                  ),
+                                  onPressed: () {
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) => Dishhome(
+                                                  restaurant: restaurant,
+                                                  dish: dish,
+                                                )));
+                                  }),
                             ),
                           ),
                           //child 2 = descripion
                           Container(
-                            margin: EdgeInsets.only(top: 5),
+                            // margin: EdgeInsets.only(top: 5),
                             child: Text(
                               rating,
                               textAlign: TextAlign.center,
                               style: TextStyle(
                                 color: AppColors.primaryText,
                                 fontFamily: "Lato",
-                                fontWeight: FontWeight.w400,
+                                fontWeight: FontWeight.bold,
                                 fontSize: 18,
                               ),
                             ),
                           ),
-
                           Container(
-                            margin: EdgeInsets.only(top: 5),
-                            child: Text(
-                              restaurant,
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                color: AppColors.primaryText,
-                                fontFamily: "Lato",
-                                fontWeight: FontWeight.w800,
-                                fontSize: 14,
-                              ),
-                            ),
-                          ),
-                          Align(
-                            alignment: Alignment.topCenter,
-                            child: Container(
-                              margin: EdgeInsets.only(top: 5),
-                              child: Opacity(
-                                opacity: 0.4,
-                                child: Text(
-                                  location,
-                                  textAlign: TextAlign.center,
-                                  style: TextStyle(
-                                    color: AppColors.primaryText,
-                                    fontFamily: "Lato",
-                                    fontWeight: FontWeight.w800,
-                                    fontSize: 14,
-                                  ),
-                                ),
-                              ),
-                            ),
+                            child: FlatButton(
+                                child: Text(restaurant + ' - ' + location,
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                        color: Colors.grey[900], fontSize: 16)),
+                                onPressed: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => Restauranthome(
+                                                restaurant: restaurant,
+                                                location: location,
+                                              )));
+                                }),
                           ),
                         ],
                       ),

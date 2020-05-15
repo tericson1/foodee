@@ -1,145 +1,182 @@
 import 'package:flutter/material.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:foodee/CustomCard.dart';
-import 'package:foodee/views/restaurant.dart';
-//final databaseReference = Firestore.instance;
+import 'package:foodee/Smallcard.dart';
 
 class FourthTab extends StatelessWidget {
-  FourthTab(
-      {@required this.review, this.rating, this.dish, this.imageurl,this.restaurant,this.location});
-  final rating;
-  final review;
-  final dish;
-  final imageurl;
-   String restaurant;
-   String location;
-
-
-//Profile Page 
-
   @override
   Widget build(BuildContext context) {
-    restaurant = 'BK Lounge';
-    location = 'Hampton,NH';
-    CollectionReference _collection = Firestore.instance.collection('Reviews');
     return Scaffold(
-      backgroundColor: Colors.grey[200],
-      body: 
-Column(
- 
-  children: <Widget>[
-   Container
-   (
-      width: 500,
-      color: Colors.blue[600],
-      child:
-   Card(
- child: Column(
-        mainAxisSize: MainAxisSize.min,
+      body: Column(
         children: <Widget>[
-        
-        Text('Dish Name',
-        style: TextStyle(
-                  color: Colors.grey[900],
-                  fontWeight: FontWeight.bold,
-                  fontSize: 22)
-        ),
+          Expanded(
+            child: SingleChildScrollView(
+              child: Column(
+                children: <Widget>[
+                  // Container(child:
 
-                FlatButton(
-                    child: Text('restaurant , location', style: TextStyle(
-                  color: Colors.grey[600],
-                  fontWeight: FontWeight.bold,
-                  fontSize: 16)),
-                    onPressed: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => Restauranthome(
-                                  restaurant: restaurant,
-                                  )));
-                    }),
+                  Center(
+                    child: Text("My Profile",
+                        style: TextStyle(
+                            color: Colors.lightBlue[900],
+                            fontWeight: FontWeight.bold,
+                            fontSize: 20)),
+                  ),
 
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Row(
-              
-  children: <Widget>[
-    Expanded(
-      child: Text('Average Rating', textAlign: TextAlign.center),
-    ),
-    Expanded(
-      child: Text('Number of Reviews', textAlign: TextAlign.center),
-    ),
-    
-    
-  ],
-),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Container(
+                        width: 250.0,
+                        height: 250.0,
+                        decoration: new BoxDecoration(
+                            shape: BoxShape.circle,
+                            image: new DecorationImage(
+                                fit: BoxFit.fill,
+                                image: new AssetImage('images/JoshProf.jpg')))),
+                  ),
+                  Icon(Icons.add_a_photo),
+
+                  Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Text("E-mail:",
+                              style: TextStyle(
+                                  color: Colors.lightGreenAccent[900],
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 20)),
+                        ),
+                        Text("JPM12788@Gmail.com",
+                            style: TextStyle(
+                                color: Colors.lightGreenAccent[900],
+                                fontSize: 20)),
+                        Icon(Icons.edit),
+                      ]),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text("Password: *****",
+                            style: TextStyle(
+                                color: Colors.lightGreenAccent[900],
+                                fontWeight: FontWeight.bold,
+                                fontSize: 20)),
+                      ),
+                      Icon(Icons.edit),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text("Bio:",
+                            style: TextStyle(
+                                color: Colors.lightGreenAccent[900],
+                                fontWeight: FontWeight.bold,
+                                fontSize: 22)),
+                      ),
+                      Icon(Icons.edit),
+                    ],
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text("Dietary Preferences",
+                        style: TextStyle(
+                            color: Colors.lightGreenAccent[900],
+                            fontWeight: FontWeight.bold,
+                            fontSize: 22)),
+                  ),
+                  Text("Carnivore",
+                      style: TextStyle(
+                          color: Colors.lightGreenAccent[900],
+                          fontWeight: FontWeight.bold,
+                          fontSize: 16)),
+                  Icon(Icons.add),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(" My Neighborhoods",
+                        style: TextStyle(
+                            color: Colors.lightGreenAccent[900],
+                            fontWeight: FontWeight.bold,
+                            fontSize: 22)),
+                  ),
+                  Text("Harvard Square",
+                      style: TextStyle(
+                          color: Colors.lightGreenAccent[900],
+                          fontWeight: FontWeight.bold,
+                          fontSize: 16)),
+                  Text("Hampton Beach",
+                      style: TextStyle(
+                          color: Colors.lightGreenAccent[900],
+                          fontWeight: FontWeight.bold,
+                          fontSize: 16)),
+                  Icon(Icons.add),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text("I am a Connoisseur of:",
+                        style: TextStyle(
+                            color: Colors.lightGreenAccent[900],
+                            fontWeight: FontWeight.bold,
+                            fontSize: 22)),
+                  ),
+                  Text("Buffalo Chicken",
+                      style: TextStyle(
+                          color: Colors.lightGreenAccent[900],
+                          fontWeight: FontWeight.bold,
+                          fontSize: 16)),
+                  Text("Carbonara",
+                      style: TextStyle(
+                          color: Colors.lightGreenAccent[900],
+                          fontWeight: FontWeight.bold,
+                          fontSize: 16)),
+                  Icon(Icons.add),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(" My Reviews",
+                        style: TextStyle(
+                            color: Colors.lightGreenAccent[900],
+                            fontWeight: FontWeight.bold,
+                            fontSize: 22)),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Container(
+                      child: Smallcard(
+                        foodimageurl: 'images/scallopplatter.png',
+                        rating: "96",
+                        dish: "Fried Scallops",
+                        restaurant: "Petey's",
+                        location: "Rye, NH",
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(" My Wishlist",
+                        style: TextStyle(
+                            color: Colors.lightGreenAccent[900],
+                            fontWeight: FontWeight.bold,
+                            fontSize: 22)),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 8.0, bottom: 8.0),
+                    child: Container(
+                      child: Smallcard(
+                        foodimageurl: 'images/lobsterroll.jpg',
+                        rating: "95",
+                        dish: "Lobster Roll",
+                        restaurant: "Beach Plum",
+                        location: "North Hampton, NH",
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
           ),
-         
         ],
       ),
-   ),
-   ),
-      Expanded( child:Container(
-
-          child: Center(
-        child: Container(
-          padding: const EdgeInsets.all(10.0),
-          child: StreamBuilder<QuerySnapshot>(
-            stream: _collection.snapshots(),
-            builder:
-                (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
-              if (snapshot.hasError)
-                return new Text('Error: ${snapshot.error}');
-              switch (snapshot.connectionState) {
-                case ConnectionState.waiting:
-                  return new Text('Loading...');
-                default:
-                  return new ListView(
-                    children: snapshot.data.documents
-                        .map((DocumentSnapshot document) {
-                      return new CustomCard(
-                        rating: document['Rating'],
-                        review: document['Content'],
-                        // dish: ${_collection.where('ref', isEqualTo: 'Dish')
-                        //         .getDocuments()
-                        //         .when((doc) {ref_value = doc.documents[0]['ref'];})},
-                        imageurl: document['ImageURL'],
-                      );
-                    }).toList(),
-                  );
-              }
-            },
-          ),
-
-
-
-        ),
-      )
-      ),
-    ),
-  ]
-)
     );
   }
 }
-
-/*
-await Firestore.instance
-    .collection('Reviews')
-    .where('ref', isEqualTo: 'Dish')
-    .getDocuments()
-    .then((doc) {
-  ref_value = doc.documents[0]['ref'];
-});
-get another with that reference
-
-await Firestore.instance
-    .collection('collection')
-    .where('ref', isEqualTo: ref_value)
-    .limit(1)
-    .getDocuments()
-    .then((doc) {
-  ref_value = doc.documents[0]['ref'];
-});
-*/

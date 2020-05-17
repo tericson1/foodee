@@ -90,7 +90,7 @@ class Dishhome extends StatelessWidget {
                       height: 40,
                       color: Colors.blue[900],
                       child: FlatButton(
-                          child: Text(restaurant + " - Seabrook, NH",
+                          child: Text(restaurant + " - " + location,
                               style: TextStyle(
                                   color: Colors.grey[200],
                                   fontWeight: FontWeight.bold,

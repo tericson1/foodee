@@ -69,13 +69,16 @@ class ThirdTab extends StatelessWidget {
                     location: "Hampton, Nh",
                   ),
                 ),
-                Container(
-                  child: Smallcard(
-                    foodimageurl: 'images/tacos.jpg',
-                    rating: "96",
-                    dish: "Chicken Taco's",
-                    restaurant: "Burrito Loco",
-                    location: "Hampton, NH",
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Container(
+                    child: Smallcard(
+                      foodimageurl: 'images/tacos.jpg',
+                      rating: "96",
+                      dish: "Chicken Taco's",
+                      restaurant: "Burrito Loco",
+                      location: "Hampton, NH",
+                    ),
                   ),
                 ),
 

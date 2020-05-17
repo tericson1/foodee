@@ -140,7 +140,7 @@ class FourthTab extends StatelessWidget {
                             fontSize: 22)),
                   ),
                   Padding(
-                    padding: const EdgeInsets.all(8.0),
+                    padding: const EdgeInsets.only(top: 8.0, bottom: 8.0),
                     child: Container(
                       child: Smallcard(
                         foodimageurl: 'images/scallopplatter.png',
@@ -152,7 +152,19 @@ class FourthTab extends StatelessWidget {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.all(8.0),
+                    padding: const EdgeInsets.only(top: 8.0, bottom: 8.0),
+                    child: Container(
+                      child: Smallcard(
+                        foodimageurl: 'images/saltbagel.jpg',
+                        rating: "84",
+                        dish: "Salt Bagel",
+                        restaurant: "Best Bagel",
+                        location: "Seabrook, NH",
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 8.0, bottom: 8.0),
                     child: Text(" My Wishlist",
                         style: TextStyle(
                             color: Colors.lightGreenAccent[900],

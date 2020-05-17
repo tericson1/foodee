@@ -22,142 +22,75 @@ class Smallcard extends StatelessWidget {
   final String restaurant;
   final String location;
 
-// List<Smallcard> dishes (BuildContext context) => [
-//       Smallcard(
-//         foodimageurl: 'images/saltbagel.jpg',
-//         rating: "60",
-//         dishname: "dishname",
-//         restaurant: "restaurant",
-//         location: "test location",
-//       ),
-// ];
-
-//change class name
-//class AdvertisementItemWidget extends StatelessWidget {
-  //  const AdvertisementItemWidget({Key key, @required this.dish})
-  //: assert(dish != null),
-  // super(key: key);
-
-  // This height will allow for all the Card's content to fit comfortably within the card.
-
-  //final Smallcard dish;
-
   @override
   Widget build(BuildContext context) {
     return Container(
-      constraints: BoxConstraints.expand(height: 130, width: 500),
-      child: Stack(
-        alignment: Alignment.topCenter,
-        children: [
-          Positioned(
-            left: 0,
-            top: 10,
-            right: 0,
-            bottom: 0,
-            child: Container(
-              decoration: BoxDecoration(
-                color: AppColors.primaryBackground,
+      height: 140,
+      width: 500,
+      child: Card(
+        child: Row(
+          children: <Widget>[
+            Padding(
+              padding: const EdgeInsets.only(top: 2, bottom: 2, left: 10),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(8.0),
+                    child: Image.asset(foodimageurl,
+                        height: 110.0, width: 125.0, fit: BoxFit.fill),
+                  ),
+                ],
               ),
-              //child: Container(child: Text("Box")),
             ),
-          ),
-          Positioned(
-            left: 0,
-            top: 10,
-            right: 0,
-            child: Row(
-              //crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                Align(
-                  alignment: Alignment.topLeft,
-
-                  //Child 1 = Image
-
-                  child: Container(
-                    width: 175,
-                    height: 130,
-                    child: Image.asset(
-                      foodimageurl,
-                      fit: BoxFit.fill,
+            Container(
+              width: 215,
+              child: Column(
+                //mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: <Widget>[
+                  FlatButton(
+                      padding: EdgeInsets.all(0),
+                      child: Text(dish,
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              color: Colors.cyan[800],
+                              fontSize: 20)),
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => Dishhome(
+                                      restaurant: restaurant,
+                                      location: location,
+                                      dish: dish,
+                                    )));
+                      }),
+                  Container(
+                    height: 40,
+                    width: 40,
+                    decoration: BoxDecoration(
+                        color: Colors.blueGrey[200], shape: BoxShape.circle),
+                    child: Center(
+                      child: Text(rating,
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white,
+                              fontSize: 18)),
                     ),
                   ),
-                ),
-                Expanded(
-                  flex: 1,
-                  child: Align(
-                    alignment: Alignment.topCenter,
-                    child: Container(
-                      height: 130,
-                      width: 175,
-                      margin: EdgeInsets.only(left: 0, top: 0),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.stretch,
-                        children: [
-                          Align(
-                            alignment: Alignment.topCenter,
-                            child: Container(
-                              //height: 30,
-                              child: FlatButton(
-                                  child: Text(
-                                    dish,
-                                    textAlign: TextAlign.center,
-                                    style: TextStyle(
-                                      color: AppColors.secondaryText,
-                                      fontFamily: "Lato",
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 20,
-                                    ),
-                                  ),
-                                  onPressed: () {
-                                    Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                            builder: (context) => Dishhome(
-                                                  restaurant: restaurant,
-                                                  dish: dish,
-                                                )));
-                                  }),
-                            ),
-                          ),
-                          //child 2 = descripion
-                          Container(
-                            // margin: EdgeInsets.only(top: 5),
-                            child: Text(
-                              rating,
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                color: AppColors.primaryText,
-                                fontFamily: "Lato",
-                                fontWeight: FontWeight.bold,
-                                fontSize: 18,
-                              ),
-                            ),
-                          ),
-                          Container(
-                            child: FlatButton(
-                                child: Text(restaurant + ' - ' + location,
-                                    textAlign: TextAlign.center,
-                                    style: TextStyle(
-                                        color: Colors.grey[900], fontSize: 16)),
-                                onPressed: () {
-                                  Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) => Restauranthome(
-                                                restaurant: restaurant,
-                                                location: location,
-                                              )));
-                                }),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-              ],
+                  Text(restaurant,
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Colors.grey[800],
+                          fontSize: 16)),
+                  Text(location,
+                      style: TextStyle(color: Colors.grey[800], fontSize: 16)),
+                ],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

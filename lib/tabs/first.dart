@@ -30,29 +30,29 @@ class FirstTab extends StatelessWidget {
             ),
             Container(
               child: Smallcard(
-                foodimageurl: 'images/scallopplatter.png',
+                foodimageurl: 'images/kimchi.jpg',
                 rating: "96",
-                dish: "Fried Scallops",
-                restaurant: "Petey's",
-                location: "Rye, NH",
+                dish: "Kimchi Ramen",
+                restaurant: "Sapporo",
+                location: "Cambridge, Ma",
               ),
             ),
             Container(
               child: Smallcard(
-                foodimageurl: 'images/lobsterroll.jpg',
+                foodimageurl: 'images/lobstercacio.jpg',
                 rating: "95",
-                dish: "Lobster Roll",
-                restaurant: "Beach Plum",
-                location: "North Hampton, NH",
+                dish: "Lobster Cacio E Pepe",
+                restaurant: "Waypoint",
+                location: "Cambridge, Ma",
               ),
             ),
             Container(
               child: Smallcard(
-                foodimageurl: 'images/saltbagel.jpg',
+                foodimageurl: 'images/lobsterhourly.jpg',
                 rating: "90",
-                dish: "Salt Bagel",
-                restaurant: "Best Bagel",
-                location: "Seabrook, NH",
+                dish: "Lobster Roll",
+                restaurant: "Hourly Oyster House",
+                location: "Cambridge, Ma",
               ),
             ),
             Container(

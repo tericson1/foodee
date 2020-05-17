@@ -25,7 +25,7 @@ class FirstTab extends StatelessWidget {
               child: Text("Discover: Top 3 Dishes Near Me",
                   style: TextStyle(
                       fontWeight: FontWeight.bold,
-                      color: Colors.lightBlue[800],
+                      color: Colors.lightBlue[900],
                       fontSize: 20)),
             ),
             Container(

@@ -3,18 +3,10 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:foodee/CustomCard.dart';
 import 'package:foodee/views/restaurant.dart';
 import 'package:foodee/DishSumNoPic.dart';
-//final databaseReference = Firestore.instance;
 
 class Searchresults extends StatelessWidget {
   Searchresults({@required this.dish, this.restaurant, this.location});
 
-  // this.review,
-  //this.rating,
-  //this.imageurl,
-  //this.restaurant,
-  //     this.location});
-  // final rating;
-  // final review;
   String dish;
   // final imageurl;
   String restaurant;

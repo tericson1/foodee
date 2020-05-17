@@ -50,12 +50,6 @@ class DishSumNoPic extends StatelessWidget {
                                       fontSize: 18))),
                         ),
                       ]),
-                      // Column(
-                      //   children: <Widget>[
-                      //     Text('Add Review'),
-                      //     Icon(Icons.add_circle_outline),
-                      //   ],
-                      // ),
                       Column(children: <Widget>[
                         Padding(
                           padding: const EdgeInsets.all(8.0),

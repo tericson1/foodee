@@ -5,16 +5,6 @@ import 'tabs/second.dart';
 import 'tabs/third.dart';
 import 'tabs/fourth.dart';
 import 'package:foodee/views/searchresults.dart';
-//import 'CustomSearchDelegate.dart';
-
-//import 'tabs/cards.dart';
-//import 'package:firebase_database/firebase_database.dart';
-
-// import 'views/login.dart';
-// import 'package:foodee/router.dart' as router;
-// import 'package:foodee/consts/routes_path.dart' as routes;
-// import 'locator.dart';
-// import 'services/navigation_service.dart';
 
 void main() {
   runApp(MaterialApp(

@@ -4,12 +4,6 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 //final databaseReference = Firestore.instance;
 import 'package:foodee/main.dart';
 
-//import 'CustomSearchDelegate.dart';
-//import 'package:foodee/tabs/first.dart';
-//import 'package:foodee/tabs/second.dart';
-//import 'package:foodee/tabs/third.dart';
-//import 'package:foodee/tabs/fourth.dart';
-
 class Restauranthome extends StatelessWidget {
   Restauranthome({@required this.restaurant, this.location});
   final String restaurant;

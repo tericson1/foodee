@@ -22,12 +22,7 @@ class SecondTab extends StatelessWidget {
   Widget build(BuildContext context) {
     Text('Add a Review');
     return Scaffold(
-        body:
-            //resizeToAvoidBottomPadding: false,
-            //backgroundColor: Colors.grey[50],
-            // body: //Text('Add A Review'),
-
-            Column(
+        body: Column(
       children: <Widget>[
         Expanded(
           child: SingleChildScrollView(

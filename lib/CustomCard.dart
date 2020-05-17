@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:foodee/views/dishhome.dart';
-//import 'package:flutter/services.dart';
-//import 'tabs/fourth.dart';
-//import 'package:foodee/views/restaurant.dart';
 
 class CustomCard extends StatelessWidget {
   CustomCard({@required this.review, this.rating, this.dish, this.imageurl});

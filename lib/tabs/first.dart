@@ -68,6 +68,7 @@ class FirstTab extends StatelessWidget {
                   'https://i.pinimg.com/564x/a6/a4/fb/a6a4fbb5bc30ebd05d43fb0ad040c039.jpg',
               rating: 95,
               dish: "Lobster Roll",
+              restaurant: 'Big Als',
               review:
                   "Very Scrumptious, best lobster roll I've ever had. Excellent butter proportions. Hot dog roll was toasted to perfection",
             )),
@@ -76,6 +77,7 @@ class FirstTab extends StatelessWidget {
               imageurl:
                   'https://www.jerseygirlcooks.com/wp-content/uploads/2017/09/DSC_0793-1024x683.jpg',
               rating: 95,
+              restaurant: 'Hagans Grill',
               dish: "Pan Seared Swordfish",
               review:
                   "Cooked to Perfection. Flavor was immaculate.Made me feel like I was a King. Portions were good, not too much not too little",

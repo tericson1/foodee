@@ -132,6 +132,7 @@ class Dishhome extends StatelessWidget {
                                 rating: document['Rating'],
                                 review: document['Content'],
                                 dish: document['Dish'],
+                                restaurant: document['Restaurant'],
                                 // dish: ${_collection.where('ref', isEqualTo: 'Dish')
                                 //         .getDocuments()
                                 //         .when((doc) {ref_value = doc.documents[0]['ref'];})},

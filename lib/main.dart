@@ -65,7 +65,7 @@ class MyHomeState extends State<MyHome> with SingleTickerProviderStateMixin {
                   MaterialPageRoute(
                       builder: (context) => Searchresults(
                             restaurant: 'cool restaurant',
-                            dish: 'cool dish',
+                            dish: 'Lobster Roll',
                           )));
             },
           ),

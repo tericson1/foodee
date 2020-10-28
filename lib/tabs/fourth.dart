@@ -101,7 +101,12 @@ class FourthTab extends StatelessWidget {
                             fontWeight: FontWeight.bold,
                             fontSize: 22)),
                   ),
-                  Text("Harvard Square",
+                  Text("Malden",
+                      style: TextStyle(
+                          color: Colors.lightGreenAccent[900],
+                          fontWeight: FontWeight.bold,
+                          fontSize: 16)),
+                  Text("Rockland, ME",
                       style: TextStyle(
                           color: Colors.lightGreenAccent[900],
                           fontWeight: FontWeight.bold,

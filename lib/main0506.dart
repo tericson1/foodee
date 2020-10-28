@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 //import 'package:foodee/views/restaurant.dart';
 import 'tabs/first.dart';
-import 'tabs/second.dart';
+import 'tabs/camtest.dart';
 import 'tabs/third.dart';
 import 'tabs/fourth.dart';
 import 'CustomSearchDelegate.dart';

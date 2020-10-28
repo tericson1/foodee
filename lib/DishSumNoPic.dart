@@ -8,11 +8,12 @@ class DishSumNoPic extends StatelessWidget {
   String dish;
   String restaurant;
   String location;
+  String lineBreak;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding: const EdgeInsets.all(2.0),
       child: Column(children: <Widget>[
         Container(
           width: 500,
@@ -25,7 +26,7 @@ class DishSumNoPic extends StatelessWidget {
                     style: TextStyle(
                         color: Colors.grey[900],
                         fontWeight: FontWeight.bold,
-                        fontSize: 22)),
+                        fontSize: 16)),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Row(
@@ -36,18 +37,19 @@ class DishSumNoPic extends StatelessWidget {
                           padding: const EdgeInsets.all(8.0),
                           child: Text('Average Rating',
                               textAlign: TextAlign.center,
-                              style: TextStyle(fontWeight: FontWeight.bold)),
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold, fontSize: 12)),
                         ),
                         Container(
                           color: Colors.indigo[100],
-                          height: 45,
-                          width: 50,
+                          height: 25,
+                          width: 30,
                           child: Center(
                               child: Text('91',
                                   style: TextStyle(
                                       color: Colors.white,
                                       fontWeight: FontWeight.bold,
-                                      fontSize: 18))),
+                                      fontSize: 12))),
                         ),
                       ]),
                       Column(children: <Widget>[
@@ -55,18 +57,19 @@ class DishSumNoPic extends StatelessWidget {
                           padding: const EdgeInsets.all(8.0),
                           child: Text('Number of Reviews',
                               textAlign: TextAlign.center,
-                              style: TextStyle(fontWeight: FontWeight.bold)),
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold, fontSize: 12)),
                         ),
                         Container(
                           color: Colors.indigo[100],
-                          height: 45,
-                          width: 50,
+                          height: 25,
+                          width: 30,
                           child: Center(
                               child: Text('5',
                                   style: TextStyle(
                                       color: Colors.white,
                                       fontWeight: FontWeight.bold,
-                                      fontSize: 18))),
+                                      fontSize: 12))),
                         ),
                       ]),
                     ],
@@ -74,14 +77,14 @@ class DishSumNoPic extends StatelessWidget {
                 ),
                 Container(
                   width: 350,
-                  height: 40,
+                  height: 30,
                   color: Colors.blue[900],
                   child: FlatButton(
                       child: Text(restaurant + " - " + location,
                           style: TextStyle(
                               color: Colors.grey[200],
                               fontWeight: FontWeight.bold,
-                              fontSize: 16)),
+                              fontSize: 12)),
                       onPressed: () {
                         Navigator.push(
                             context,

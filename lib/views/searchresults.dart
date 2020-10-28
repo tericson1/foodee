@@ -43,6 +43,7 @@ class Searchresults extends StatelessWidget {
                             'https://s3-media0.fl.yelpcdn.com/bphoto/SlBmi1z5-CKaFNHAhq28Dw/l.jpg',
                         rating: 88,
                         dish: "Lobster Roll",
+                        restaurant: 'cool',
                         review:
                             "Was on a bulky roll which I didn't like as much as a hot dog roll. The lobster was fresh, the mayo not too much. Good amount of lobster, I was satisfied with this roll",
                       )),
@@ -62,6 +63,7 @@ class Searchresults extends StatelessWidget {
                             'https://rasamalaysia.com/wp-content/uploads/2012/07/lobster-rolls-thumb.jpg',
                         rating: 95,
                         dish: "Lobster Roll",
+                        restaurant: 'Beach Plum',
                         review:
                             "Very Scrumptious, best lobster roll I've ever had. Excellent butter proportions. Hot dog roll was toasted to perfection",
                       )),

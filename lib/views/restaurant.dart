@@ -57,7 +57,7 @@ class Restauranthome extends StatelessWidget {
                           style: TextStyle(
                               color: Colors.grey[600],
                               fontWeight: FontWeight.bold,
-                              fontSize: 16))),
+                              fontSize: 18))),
                   Container(
                       child: Text(location,
                           style: TextStyle(

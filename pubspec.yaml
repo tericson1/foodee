@@ -18,6 +18,8 @@ dependencies:
   firebase_auth: ^0.14.0+5
   cloud_firestore: ^0.13.5
   flutter_gallery_assets: ^0.1.9
+  firebase_storage: ^3.0.3  
+  permission_handler: ^5.0.1+1
 
   cupertino_icons: ^0.1.2
   flutter_cupertino_localizations: ^1.0.1
@@ -25,12 +27,20 @@ dependencies:
   get_it: ^4.0.0
   provider: ^4.0.0
   flappy_search_bar: 1.4.1
+  flutter_form_builder: 3.14.0
+  image_picker: 0.6.7+11
+  camera: 0.5.8+11
+  path_provider: 1.6.22
+  path: 
 
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 grinder: ^0.8.4
+
+# dependency_overrides:
+#   path: 1.7.0
 
 flutter:
   uses-material-design: true
